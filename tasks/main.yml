@@ -1,7 +1,12 @@
-- name: Install required packages
+- name: Install python-virtualenv
   apt: name={{ item }}
   with_items:
     - python-virtualenv
+  ignore_errors: yes
+
+- name: Install virtualenv
+  apt: name={{ item }}
+  with_items:
     - virtualenv
   ignore_errors: yes
 
