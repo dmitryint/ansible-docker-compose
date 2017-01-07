@@ -10,15 +10,10 @@
     - virtualenv
   ignore_errors: yes
 
-- name: Install Docker Compose 1.7.x
+- name: Install Docker Compose
   pip:
-    name: docker-compose>=1.7,<1.8
-    virtualenv: /opt/compose-1.7
-  when: compose_version == '1.7'
-
-- name: Install Docker Compose 1.8.x
-  pip:
-    name: docker-compose>=1.8,<1.9
+    name: docker-compose
+    version: 1.8.1
     virtualenv: /opt/compose-1.8
   when: compose_version == '1.8'
 
